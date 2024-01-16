@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0px 20px 0px 20px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    body {
+        min-width: 320px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+}
+
+a {
+    margin: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;    
+}
+
+.nav-inner {
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.nav-inner:hover {
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  } 
+
+.intro { 
+    background-color: #FFFFFF;
+    margin: 60px 0px 20px 0px;
+}
+
+.intro-heading {
+    display: inline-block;
+    font-size: 50px;
+    letter-spacing: -0.05em;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: hsl(0, 0%, 39%);
+}
+
+.email-link {
+    color: inherit; 
+    font-size: inherit;
+    transition: color 0.3s;
+  }
+  
+.email-link:hover {
+    color: blue;
+  }
+
+.contact-icons {
+    width: 30px;
+    height: 30px;
+}
+  
+.contact-icons:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
