@@ -1,9 +1,12 @@
 :root {
     --border-settings: 0px solid #ccc;
+    --container-padding: 0px 20px 0px 20px;
+    --standard-spacing: 20px;
 }
 
 *{
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
     font-family: "Roboto", Arial, sans-serif;
     font-size: 14px;
 }
@@ -11,14 +14,13 @@
 @media (min-width: 768px) {
     body {
         min-width: 320px;
-        margin: 0 auto;
         max-width: 1200px;
     }
 }
 
 /* All Line Dividers */
 hr {
-    margin: 20px 0px;
+    margin: var(--standard-spacing) 0px;
     border: 0;
     border-top: 1px solid hsl(0, 0%, 90%);
 }
@@ -31,7 +33,7 @@ hr {
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 30px auto;    
+    margin: var(--standard-spacing) auto;    
 }
 
 .nav-inner {
@@ -55,13 +57,13 @@ hr {
     /* transition: transform 0.3s; */
 }
 
-
 /* Overall Container: Intro on left, Portfolio on right */
 .container {
     display: flex;
     max-width: 1024px;
     height: 800px;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 40px;
+    padding: 20px 0px;
     border: var(--border-settings);
 }
 
@@ -70,7 +72,20 @@ hr {
     width: 40%;
     background-color: #FFFFFF;
     border: var(--border-settings);
-    padding: 0px 20px 0px 20px;
+    padding: var(--container-padding);
+}
+
+.intro-heading {
+    display: inline-block;
+    font-size: 36px;
+    letter-spacing: -0.03em;
+    margin: 0px 0px 0px 0px;
+}
+
+.intro-subheading {
+    font-size: 24px;
+    color: hsl(0, 0%, 39%);
+    margin: 10px 0px 10px 0px;
 }
 
 .portrait {
@@ -80,17 +95,6 @@ hr {
     /* border-radius: 50%; */;
     margin-bottom: 20px;
   } 
-
-.intro-heading {
-    display: inline-block;
-    font-size: 36px;
-    letter-spacing: -0.03em;
-}
-
-.intro-subheading {
-    font-size: 24px;
-    color: hsl(0, 0%, 39%);
-}
 
 .intro-text {
     font-size: 16px;
@@ -122,14 +126,16 @@ hr {
     width: 60%;
     overflow-y: auto;
     border: var(--border-settings);
-    padding: 0px 20px 0px 20px;
+    padding: var(--container-padding);
 }
 
 .portfolio-header {
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 1;
+    z-index: 0;
+    /* background-color: aliceblue; */
+    margin: 0;
 }
 
 .portfolio-heading {
@@ -148,10 +154,13 @@ hr {
     color: hsl(0, 0%, 30%);
 }
 
+.portfolio-content h3 {
+    font-size: 16px;
+}
+
 .portfolio-item {
     display: flex;
     flex-direction: column;
-    margin: 20px 0px;
 }
 
 .portfolio-item-text {
