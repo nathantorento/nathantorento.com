@@ -101,13 +101,13 @@ hr {
     color: hsl(0, 0%, 40%);
 }
 
-.intro-text a {
+.email-link {
     color: inherit; 
-    text-decoration: none;
     font-size: inherit;
-}
-
-.intro-text a:hover {
+    transition: color 0.3s;
+  }
+  
+.email-link:hover {
     color: blue;
   }
 
