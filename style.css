@@ -1,6 +1,6 @@
 :root {
     --border-settings: 0px solid #ccc;
-    --container-padding: 0px 20px 0px 20px;
+    --container-padding: 40px 20px 0px 20px;
     --standard-spacing: 20px;
 }
 
@@ -9,13 +9,6 @@
     margin: 0px;
     font-family: "Roboto", Arial, sans-serif;
     font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    body {
-        min-width: 320px;
-        max-width: 1200px;
-    }
 }
 
 /* All Line Dividers */
@@ -60,16 +53,17 @@ hr {
 /* Overall Container: Intro on left, Portfolio on right */
 .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     max-width: 1024px;
     height: 800px;
-    margin: 0px 40px;
-    padding: 20px 0px;
+    margin: var(--standard-spacing) auto;
     border: var(--border-settings);
 }
 
 /* (Left side) Intro container */
 .intro { 
-    width: 40%;
+    flex: 0 0 40%;
     background-color: #FFFFFF;
     border: var(--border-settings);
     padding: var(--container-padding);
@@ -90,7 +84,8 @@ hr {
 
 .portrait {
     max-width: 86%;
-    height: auto;
+    max-height: 400px;
+    width: auto;
     display: block;
     /* border-radius: 50%; */;
     margin-bottom: 20px;
@@ -101,13 +96,13 @@ hr {
     color: hsl(0, 0%, 40%);
 }
 
-.email-link {
+.intro-text a {
     color: inherit; 
+    text-decoration: none;
     font-size: inherit;
-    transition: color 0.3s;
-  }
-  
-.email-link:hover {
+}
+
+.intro-text a:hover {
     color: blue;
   }
 
@@ -123,7 +118,7 @@ hr {
 
 /* (Right side) Portfolio container */
 .portfolio {
-    width: 60%;
+    flex: 0 0 50%;
     overflow-y: auto;
     border: var(--border-settings);
     padding: var(--container-padding);
@@ -163,6 +158,14 @@ hr {
     flex-direction: column;
 }
 
+.portfolio-item-heading {
+    margin: 0px 0px 20px 0px
+}
+
+.portfolio-pic {
+    margin: 0px 0px 20px 0px
+}
+
 .portfolio-item-text {
     margin-bottom: 10px;
 }
@@ -190,3 +193,18 @@ hr {
 .portfolio-link:hover {
     color: blue;
   }
+
+/* Media query for viewport width less than 1024px */
+@media (max-width: 1024px) {
+
+    
+    .container {
+        flex-direction: column; /* Change to a column layout */
+    }
+
+    .intro,
+    .portfolio {
+        width: 100%; /* Full width when stacked vertically */
+    }
+}
+
