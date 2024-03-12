@@ -1,6 +1,6 @@
 :root {
     --border-settings: 0px solid #ccc;
-    --container-padding: 40px 20px 0px 20px;
+    --container-padding: 0px 20px 0px 20px;
     --standard-spacing: 20px;
 }
 
@@ -56,8 +56,8 @@ hr {
     flex-wrap: wrap;
     justify-content: space-evenly;
     max-width: 1024px;
-    height: 800px;
-    margin: var(--standard-spacing) auto;
+    height: 720px;
+    margin: 40px auto;
     border: var(--border-settings);
 }
 
@@ -119,6 +119,7 @@ hr {
 /* (Right side) Portfolio container */
 .portfolio {
     flex: 0 0 50%;
+    height: 100%;
     overflow-y: auto;
     border: var(--border-settings);
     padding: var(--container-padding);
@@ -159,7 +160,7 @@ hr {
 }
 
 .portfolio-item-heading {
-    margin: 0px 0px 20px 0px
+    margin: 0px 0px 0px 0px
 }
 
 .portfolio-pic {
@@ -197,17 +198,12 @@ hr {
     color: blue;
   }
 
-/* Media query for viewport width less than 1024px */
-@media (max-width: 1024px) {
-
-    
+@media (max-width: 720px) {
     .container {
-        flex-direction: column; /* Change to a column layout */
     }
 
     .intro,
     .portfolio {
-        width: 100%; /* Full width when stacked vertically */
     }
-}
 
+}
