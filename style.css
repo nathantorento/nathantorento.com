@@ -56,7 +56,7 @@ hr {
     flex-wrap: wrap;
     justify-content: space-evenly;
     max-width: 1024px;
-    height: 600px;
+    height: 540px;
     margin: 36px auto;
     border: var(--border-settings);
 }
@@ -71,7 +71,7 @@ hr {
 
 .intro-heading {
     display: inline-block;
-    font-size: 36px;
+    font-size: 30px;
     letter-spacing: -0.03em;
     margin: 0px 0px 0px 0px;
 }
@@ -84,7 +84,7 @@ hr {
 
 .portrait {
     max-width: 86%;
-    max-height: 280px;
+    max-height: 240px;
     width: auto;
     display: block;
     /* border-radius: 50%; */;
@@ -92,7 +92,7 @@ hr {
   } 
 
 .intro-text {
-    font-size: 16px;
+    font-size: 14px;
     color: hsl(0, 0%, 40%);
 }
 
@@ -198,12 +198,19 @@ hr {
     color: blue;
   }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
     .container {
+        display: block;
+        justify-content: space-evenly;
     }
 
     .intro,
     .portfolio {
+        flex: 0 0 100%;
+        margin: 0 0 40px 0;
     }
-
+/* 
+    .portfolio-header {
+        position: unset;
+    } */
 }
