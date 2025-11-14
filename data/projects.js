@@ -1,94 +1,207 @@
 const projects = [
   {
+    title: "Personal Portfolio Website",
+    summary:
+      "A fully responsive personal website showcasing data science, engineering, and analytics projects. Built with HTML, CSS, and vanilla JavaScript with a dynamic filter system, light and dark themes, and client-side rendering.",
+    languages: ["JavaScript"],
+    toolsAndTechnologies: [
+      "HTML",
+      "CSS",
+      "GitHub",
+      "GitHub Pages"
+    ],
+    skills: [
+      "Front-End Development",
+      "UI/UX Design",
+      "Responsive Design",
+      "Interactive Filtering",
+      "DOM Manipulation",
+      "Theme Engine Development"
+    ],
+    image: "assets/img/personalwebsite.jpg",
+    outputs: {
+      live: "https://nathantorento.com",
+      repository: "https://github.com/nathantorento/personal-website"
+    }
+  },
+
+  {
     title: "NoteNotes – Music Library Management Web App",
-    summary: "End-to-end prototype to manage songs, setlists, and music resources using the Spotify API.",
+    summary:
+      "A full end-to-end prototype that centralizes music libraries, setlists, and resources. All design and code original. Songs sourced using the Spotify API.",
     languages: ["Python"],
-    techStack: ["Dash (Plotly)", "Spotify API", "GitHub"],
-    roles: ["Data Science", "Business Analyst", "Tech Support"],
-    tags: ["Python", "Web", "API", "Dash"],
+    toolsAndTechnologies: ["Dash (Plotly)", "Spotify API", "GitHub"],
+    skills: [
+      "Web Development",
+      "UI/UX Design",
+      "API Integration",
+      "Full Stack Development",
+      "Version Control",
+      "Project Management"
+    ],
     image: "assets/img/notenotes.jpg",
     outputs: {
-      code: "https://github.com/nathantorento/notenotes"
+      repository: "https://github.com/nathantorento/notenotes"
     }
   },
+
   {
-    title: "2022 SF Sidewalk Cleanliness — Replication and Extended Analysis",
-    summary: "Replication and extension of SF DPW’s 2022 Street & Sidewalk Report across San Francisco.",
+    title:
+      "2022 SF Sidewalk Cleanliness Report Replication and Extended Analysis",
+    summary:
+      "A full replication and extension of the DPW 2022 Street and Sidewalk Report across San Francisco.",
     languages: ["Python"],
-    techStack: ["GitHub", "Colab", "Jupyter Notebook"],
-    roles: ["Data Science", "Business Analyst"],
-    tags: ["Python", "EDA", "Geospatial", "ML"],
+    toolsAndTechnologies: ["GitHub", "Colab", "Jupyter Notebook"],
+    skills: [
+      "NLP",
+      "Data Wrangling",
+      "Exploratory Data Analysis",
+      "Statistical Analysis",
+      "Geospatial Analysis",
+      "Replication Studies",
+      "Machine Learning",
+      "Regression Analysis",
+      "Model Optimization",
+      "Data Visualization"
+    ],
     image: "assets/img/preview1.jpg",
     outputs: {
-      report: "https://docs.google.com/document/d/1NxOFDOxjQnm920lpCXSC99LPypADW0UZlhiOtPjJyLw/edit?usp=sharing",
-      code: "https://github.com/nathantorento/2022-SF-Cleanliness-Report-Replication/blob/main/main.ipynb"
+      report:
+        "https://docs.google.com/document/d/1NxOFDOxjQnm920lpCXSC99LPypADW0UZlhiOtPjJyLw/edit?usp=sharing",
+      code:
+        "https://github.com/nathantorento/2022-SF-Cleanliness-Report-Replication/blob/main/main.ipynb"
     }
   },
+
   {
     title: "MBTI Classification with NLP",
-    summary: "Text-classification model predicting MBTI personality types from user posts.",
+    summary:
+      "A text classification model predicting MBTI types from user posts.",
     languages: ["Python"],
-    techStack: ["GitHub", "Colab", "Jupyter Notebook"],
-    roles: ["Data Science"],
-    tags: ["Python", "NLP", "ML"],
-    image: "https://raw.githubusercontent.com/nathantorento/MBTI/main/preview.jpg",
+    toolsAndTechnologies: ["GitHub", "Colab", "Jupyter Notebook"],
+    skills: [
+      "NLP",
+      "Data Wrangling",
+      "Data Analysis",
+      "Data Visualization",
+      "Machine Learning",
+      "Model Optimization"
+    ],
+    image:
+      "https://raw.githubusercontent.com/nathantorento/MBTI/main/preview.jpg",
     outputs: {
-      report: "https://docs.google.com/document/d/1uTJQU1-7PlZevXltbRa00iQcai99oz_ry-m2SSdQthQ/edit?usp=sharing",
-      code: "https://colab.research.google.com/github/nathantorento/MBTI/blob/main/main.ipynb",
-      repo: "https://github.com/nathantorento/MBTI",
-      presentation: "https://www.beautiful.ai/player/-NqtspAerBsqRW99dDGS"
+      report:
+        "https://docs.google.com/document/d/1uTJQU1-7PlZevXltbRa00iQcai99oz_ry-m2SSdQthQ/edit?usp=sharing",
+      code:
+        "https://colab.research.google.com/github/nathantorento/MBTI/blob/main/main.ipynb",
+      repository: "https://github.com/nathantorento/MBTI",
+      presentation:
+        "https://www.beautiful.ai/player/-NqtspAerBsqRW99dDGS",
+      webapp: "WIP"
     }
   },
+
   {
     title: "HiveQL Netflix Demo",
-    summary: "Big-data query demo answering engagement questions using HiveQL over a Netflix-style dataset.",
-    languages: ["SQL (HiveQL)"],
-    techStack: ["Hue", "Hadoop"],
-    roles: ["Data Science", "Business Analyst", "Tech Support"],
-    tags: ["SQL", "HiveQL", "Hadoop", "Big Data"],
+    summary:
+      "A big-data query demo using HiveQL on Hue to explore metrics inspired by the Netflix Engagement Report.",
+    languages: ["SQL"],
+    toolsAndTechnologies: ["Hive", "HiveQL", "Hue", "Hadoop"],
+    skills: [
+      "Big Data Querying",
+      "Data Wrangling",
+      "Data Interpretation",
+      "Report Writing",
+      "Presentation Development"
+    ],
     image: "assets/img/hiveqldemo.jpg",
     outputs: {
-      htmlNotebook: "HiveQLDemoNotebook.html",
-      presentation: "https://www.beautiful.ai/player/-Ntyi7PGPN8HGbRmFlmK"
+      notebook: "HiveQLDemoNotebook.html",
+      presentation:
+        "https://www.beautiful.ai/player/-Ntyi7PGPN8HGbRmFlmK"
     }
   },
+
   {
-    title: "Homelessness vs Housing Prices — SF Bay Area & California",
-    summary: "Explores relationships between homelessness and housing prices at multiple geographic levels using ML and statistical methods.",
+    title:
+      "Unraveling the Complexity: Homelessness and Housing Prices Across SF, the Bay Area, and California",
+    summary:
+      "A predictive and exploratory project analyzing the relationship between homelessness and housing prices across multiple geographic layers.",
     languages: ["Python"],
-    techStack: ["GitHub", "Colab", "Jupyter Notebook"],
-    roles: ["Data Science", "Business Analyst"],
-    tags: ["Python", "ML", "Regression", "EDA"],
+    toolsAndTechnologies: ["GitHub", "Colab", "Jupyter Notebook"],
+    skills: [
+      "Data Collection",
+      "Data Cleaning",
+      "Data Wrangling",
+      "EDA",
+      "Statistical Analysis",
+      "Machine Learning",
+      "Dimensionality Reduction",
+      "Model Evaluation",
+      "Model Interpretation",
+      "Data Visualization"
+    ],
     image: "assets/img/homelessness_vs_housing.jpg",
     outputs: {
-      report: "https://docs.google.com/document/d/1GGRfLFDWNZIKVtrGBoObZ23CEuO8PpgcESGDbZosPMM/edit?usp=sharing",
-      code: "https://colab.research.google.com/github/nathantorento/homelessness-vs-housing-prices-sf-bay-ca/blob/main/main.ipynb",
-      repo: "https://github.com/nathantorento/homelessness-vs-housing-prices-sf-bay-ca",
-      presentation: "https://www.beautiful.ai/player/-NqtqC5wWyygGQR8dgQI"
+      report:
+        "https://docs.google.com/document/d/1GGRfLFDWNZIKVtrGBoObZ23CEuO8PpgcESGDbZosPMM/edit?usp=sharing",
+      code:
+        "https://colab.research.google.com/github/nathantorento/homelessness-vs-housing-prices-sf-bay-ca/blob/main/main.ipynb",
+      repository:
+        "https://github.com/nathantorento/homelessness-vs-housing-prices-sf-bay-ca",
+      presentation:
+        "https://www.beautiful.ai/player/-NqtqC5wWyygGQR8dgQI"
     }
   },
+
   {
-    title: "SQL for Data Science — Course & Certification",
-    summary: "Completed a 4-course specialization with a 99.82% final score, covering advanced SQL, Spark SQL, A/B testing, and data pipelines.",
-    languages: ["SQL", "Spark SQL", "Python"],
-    techStack: ["Apache Spark", "Databricks", "Delta Lake", "Mode"],
-    roles: ["Data Science", "Business Analyst"],
-    tags: ["SQL", "Spark", "AB Testing"],
+    title: "SQL for Data Science Course and Certification",
+    summary:
+      "A four-course SQL specialization completed with a 99.82 percent final grade. Includes SQL fundamentals, Spark SQL, A/B testing, distributed computing, and data pipelines.",
+    languages: ["SQL", "Python"],
+    toolsAndTechnologies: [
+      "Apache Spark",
+      "Spark SQL",
+      "SQLite",
+      "Databricks",
+      "Delta Lake",
+      "Mode"
+    ],
+    skills: [
+      "SQL Querying",
+      "Data Retrieval",
+      "Data Wrangling",
+      "Data Quality Assurance",
+      "A/B Testing",
+      "Distributed Computing",
+      "Pipeline Engineering",
+      "Data Storytelling"
+    ],
     image: "assets/img/sql_certificate.jpg",
     outputs: {
-      certificate: "https://www.coursera.org/account/accomplishments/specialization/8HVG3DJYVUBP"
+      certificate:
+        "https://www.coursera.org/account/accomplishments/specialization/8HVG3DJYVUBP"
     }
   },
+
   {
-    title: "Multi-Node Hadoop with Docker — HDFS Fault Tolerance",
-    summary: "Tutorial on spinning up a multi-node Hadoop cluster in Docker and testing HDFS fault tolerance under CAP considerations.",
-    languages: ["Bash"],
-    techStack: ["Docker", "Hadoop", "HDFS", "Terminal"],
-    roles: ["Tech Support", "Data Science"],
-    tags: ["Docker", "Hadoop", "HDFS", "Bash"],
+    title:
+      "Running a Multi-Node Hadoop Cluster on a Mac with Docker to Test HDFS Fault Tolerance",
+    summary:
+      "A Medium tutorial on building a multi-node Hadoop cluster in Docker and testing HDFS fault tolerance under the CAP theorem.",
+    languages: ["Python"],
+    toolsAndTechnologies: ["Docker", "Hadoop", "HDFS", "Terminal"],
+    skills: [
+      "Distributed Systems",
+      "Fault Tolerance Testing",
+      "Data Replication",
+      "System Monitoring",
+      "Technical Documentation"
+    ],
     image: "assets/img/hadoop.jpg",
     outputs: {
-      article: "https://nathan-torento.medium.com/distributed-systems-fault-tolerance-tutorial-78b825f8cada"
+      article:
+        "https://nathan-torento.medium.com/distributed-systems-fault-tolerance-tutorial-78b825f8cada"
     }
   }
 ];

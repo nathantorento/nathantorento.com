@@ -1,8 +1,8 @@
 // --- DOM ELEMENT REFERENCES ---
-const searchInput = document.getElementById("search"); // Search Bar
-const projectList = document.getElementById("project-list"); /// Project Display
-const rolesList = document.getElementById("roles-list"); // Role Filters
-const tagsList = document.getElementById("tags-list"); // Tag Filters
+const searchInput = document.getElementById("search");
+const projectList = document.getElementById("project-list");
+const languagesList = document.getElementById("languages-list");
+const toolsList = document.getElementById("tools-list");
 const year = document.getElementById("year");
 // The global variable "projects" is already defined in the HTML script
 
@@ -10,47 +10,41 @@ const year = document.getElementById("year");
 year.textContent = new Date().getFullYear(); // Display current year in footer
 
 // --- SET DYNAMIC VALUES ---
-let activeRole = null;
-let activeTag = null;
+let activeLanguage = null;
+let activeTool = null;
 let searchQuery = "";
 
-// --- ROLE FILTERS ---
-// // One-liner Version
-// rolesList.innerHTML = `
-// ${[... new Set(projects.map(p => p.roles).flat())].join(", ")}
-// `
-function getUniqueRoles() {
-    const allRoles = projects.flatMap(p => p.roles);
-    const uniqueRoles = [...new Set(allRoles)].sort();
-    return uniqueRoles
+// --- LANGUAGE FILTERS ---
+function getUniqueLanguages() {
+    const allLanguages = projects.flatMap(p => p.languages);
+    const uniqueLanguages = [...new Set(allLanguages)].sort();
+    return uniqueLanguages
 }
-function renderRoles() {
-    const uniqueRoles = getUniqueRoles();
-    const rolesOptions = ["All", ...uniqueRoles];
-    const rolesButtonsHTML = rolesOptions
-        .map(r => `<button data-role="${r}" 
-            aria-pressed="${activeRole === r || (!activeRole && r === 'All')}">${r}</button>`)
+function renderLanguages() {
+    const uniqueLanguages = getUniqueLanguages();
+    const languagesOptions = ["All", ...uniqueLanguages];
+    const languagesButtonsHTML = languagesOptions
+        .map(r => `<button data-language="${r}" 
+            aria-pressed="${activeLanguage === r || (!activeLanguage && r === 'All')}">${r}</button>`)
         .join("");
-    rolesList.innerHTML = rolesButtonsHTML;
+    languagesList.innerHTML = languagesButtonsHTML;
 }
-renderRoles();
 
-// --- TAG FILTERS ---
-function getUniqueTags() {
-    const allTags = projects.flatMap(p => p.tags);
-    const uniqueTags = [...new Set(allTags)].sort();
-    return uniqueTags
+// --- TECHNOLOGY AND TOOLS FILTERS ---
+function getUniqueTools() {
+    const allTools = projects.flatMap(p => p.toolsAndTechnologies);
+    const uniqueTools = [...new Set(allTools)].sort();
+    return uniqueTools
 }
-function renderTags() {
-    const uniqueTags = getUniqueTags();
-    const tagsOptions = ["All", ...uniqueTags];
-    const tagsButtonsHTML = tagsOptions
-        .map(t => `<button data-tag="${t}" 
-            aria-pressed="${activeTag === t || (!activeTag && t == "All") }">${t}</button>`)
+function renderTools() {
+    const uniqueTools = getUniqueTools();
+    const toolsOptions = ["All", ...uniqueTools];
+    const toolsButtonsHTML = toolsOptions
+        .map(t => `<button data-tool="${t}" 
+            aria-pressed="${activeTool === t || (!activeTool && t == "All") }">${t}</button>`)
         .join("");
-    tagsList.innerHTML = tagsButtonsHTML;
+    toolsList.innerHTML = toolsButtonsHTML;
 }
-renderTags();
 
 // --- RENDER PROJECTS ---
 /*
@@ -59,51 +53,63 @@ renderTags();
     then reloads multiple times later whenever a filter is applied.
 */
 function renderProjects() {
-    const filteredProjects = projects.filter(p =>
-        (!activeRole || p.roles.includes(activeRole)) &&
-        (!activeTag || p.tags.includes(activeTag)) && 
-        (!searchQuery || 
-            p.title.toLowerCase().includes(searchQuery) ||
-            p.summary.toLowerCase().includes(searchQuery)
-        )
-    );
-    if (filteredProjects.length === 0) {
-        projectList.innerHTML = `<p class="empty">No projects match your current filters.</p>`;
-        return;
-    }
-    projectList.innerHTML = filteredProjects.map(p => `
-        <article class="project-card">
-            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="project-hero">` : ""}
-            <h3>${p.title}</h3>
-            <p>${p.summary}</p>
-            <p class="meta"><strong>Tags:</strong> ${p.tags.join(", ")}</p>
-            ${p.outputs ? `
-            <div class="links">
-                ${Object.entries(p.outputs)
+  const filtered = projects.filter(p =>
+    (!activeLanguage || p.languages.includes(activeLanguage)) &&
+    (!activeTool || p.toolsAndTechnologies.includes(activeTool)) &&
+    (!searchQuery ||
+      p.title.toLowerCase().includes(searchQuery) ||
+      p.summary.toLowerCase().includes(searchQuery))
+  );
+
+  if (filtered.length === 0) {
+    projectList.innerHTML = `<p class="empty">No projects match your filters.</p>`;
+    return;
+  }
+
+  projectList.innerHTML = filtered
+    .map(
+      p => `
+    <article class="project-card">
+      ${p.image ? `<img src="${p.image}" alt="${p.title}" class="project-hero">` : ""}
+      <h3>${p.title}</h3>
+      <p>${p.summary}</p>
+
+      <p class="meta"><strong>Languages:</strong> ${p.languages.join(", ")}</p>
+      <p class="meta"><strong>Tools:</strong> ${p.toolsAndTechnologies.join(", ")}</p>
+
+      ${
+        p.outputs
+          ? `<div class="links">
+              ${Object.entries(p.outputs)
                 .map(([label, url]) => `<a href="${url}" target="_blank">${label}</a>`)
                 .join(" | ")}
-            </div>
-            ` : ""}
-        </article>
-        `).join("");
-};
-renderProjects();
+            </div>`
+          : ""
+      }
+    </article>`
+    )
+    .join("");
+}
 
-rolesList.addEventListener("click", e => {
-    if (!e.target.matches("button")) return; // guard clause for non-button clicks i.e. whitespace
-    activeRole = (e.target.dataset.role === "All") ? null : e.target.dataset.role;
-    renderProjects();
-    renderRoles();
+
+languagesList.addEventListener("click", e => {
+  if (!e.target.matches("button")) return;
+  const value = e.target.dataset.language;
+  activeLanguage = value === "All" ? null : value;
+  renderProjects();
+  renderLanguages();
 });
 
-tagsList.addEventListener("click", e => {
-    if (!e.target.matches("button")) return;
-    activeTag = (e.target.dataset.tag === "All") ? null : e.target.dataset.tag;
-    renderProjects();
-    renderTags();
-})
+toolsList.addEventListener("click", e => {
+  if (!e.target.matches("button")) return;
+  const value = e.target.dataset.tool;
+  activeTool = value === "All" ? null : value;
+  renderProjects();
+  renderTools();
+});
 
 // Search bar event listener
+
 searchInput.addEventListener("input", e => {
   searchQuery = e.target.value.toLowerCase().trim();
   renderProjects();
@@ -126,3 +132,8 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", newTheme);
   themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
 });
+
+// --- INITIAL RENDER ---
+renderLanguages();
+renderTools();
+renderProjects();
