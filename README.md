@@ -7,12 +7,13 @@ This is my personal portfolio website, built to bring together the projects and 
 
 ## Features
 – Dynamic Project Filtering: Browse projects by programming languages and tools/technologies, with optional keyword search.
-– Light and Dark Themes: Toggle between themes with persistent preferences stored in localStorage.
-– Responsive Layout: CSS Grid and Flexbox ensure readability and usability across screen sizes.
-– Modular Data Structure: All project metadata is stored in a centralized JavaScript file for easy maintenance.
-– Clean Front-End Architecture: Fully functional site without external frameworks or build tools.
+<br>– Light and Dark Themes: Toggle between themes with persistent preferences stored in localStorage.
+<br>– Responsive Layout: CSS Grid and Flexbox ensure readability and usability across screen sizes.
+<br>– Modular Data Structure: All project metadata is stored in a centralized JavaScript file for easy maintenance.
+<br>– Clean Front-End Architecture: Fully functional site without external frameworks or build tools.
 
-Project Structure
+## Project Structure
+```
 /
 ├── index.html
 ├── style.css
@@ -21,6 +22,7 @@ Project Structure
 │   └── projects.js
 └── assets/
     └── img/
+```
 
 ## Running the Website Locally
 To run this site locally:
