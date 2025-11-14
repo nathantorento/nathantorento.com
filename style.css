@@ -138,11 +138,26 @@ nav a:not(.brand):hover {
 /* --- Intro Section (personal header) --- */
 .intro {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--s4);
-  padding: 4rem 6rem 0 0;
+  align-items: center;
+  gap: var(--s5);
+  padding: 2rem 0 2rem 0;
   flex-wrap: wrap;
+}
+
+.intro-photo {
+  width: 500px;
+  filter:
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+html[data-theme="dark"] .intro-photo {
+  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.15));
+}
+
+.intro-copy {
+  flex: 1;
+  min-width: 300px;
 }
 
 .intro h1 {
