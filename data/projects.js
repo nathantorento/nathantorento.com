@@ -1,28 +1,52 @@
 const projects = [
   {
-    title: "Personal Portfolio Website",
+    title: "Bay Transit Dashboard",
     summary:
-      "A fully responsive personal website showcasing data science, engineering, and analytics projects. Built with HTML, CSS, and vanilla JavaScript with a dynamic filter system, light and dark themes, and client-side rendering.",
+      "A lightweight real-time transit arrivals dashboard for public transportation in the Bay using live 511 data. Features secure live data unlocking, editable stop management, and reliable refresh behavior designed to balance API limits alongside an extremely simple user experience.",
     languages: ["JavaScript"],
     toolsAndTechnologies: [
       "HTML",
       "CSS",
+      "Vercel",
+      "Vercel Serverless Functions",
+      "511 Transit API",
       "GitHub",
-      "GitHub Pages"
     ],
+    skills: [
+      "Front-End Development",
+      "API Integration",
+      "Serverless Architecture",
+      "State Management",
+      "UI/UX Design",
+      "Error Handling",
+      "Client-Side Routing",
+      "Local Storage Persistence",
+    ],
+    image: "assets/img/bay_transit_dashboard.jpg",
+    outputs: {
+      live: "https://bay-transit-dashboard-web.vercel.app/",
+      repository: "https://github.com/nathantorento/bay-transit-dashboard-web",
+    },
+  },
+  {
+    title: "Personal Portfolio Website",
+    summary:
+      "A fully responsive personal website showcasing data science, engineering, and analytics projects. Built with HTML, CSS, and vanilla JavaScript with a dynamic filter system, light and dark themes, and client-side rendering.",
+    languages: ["JavaScript"],
+    toolsAndTechnologies: ["HTML", "CSS", "GitHub", "GitHub Pages"],
     skills: [
       "Front-End Development",
       "UI/UX Design",
       "Responsive Design",
       "Interactive Filtering",
       "DOM Manipulation",
-      "Theme Engine Development"
+      "Theme Engine Development",
     ],
     image: "assets/img/personalwebsite.jpg",
     outputs: {
       live: "https://nathantorento.com",
-      repository: "https://github.com/nathantorento/personal-website"
-    }
+      repository: "https://github.com/nathantorento/personal-website",
+    },
   },
 
   {
@@ -37,12 +61,12 @@ const projects = [
       "API Integration",
       "Full Stack Development",
       "Version Control",
-      "Project Management"
+      "Project Management",
     ],
     image: "assets/img/notenotes.jpg",
     outputs: {
-      repository: "https://github.com/nathantorento/notenotes"
-    }
+      repository: "https://github.com/nathantorento/notenotes",
+    },
   },
 
   {
@@ -62,15 +86,14 @@ const projects = [
       "Machine Learning",
       "Regression Analysis",
       "Model Optimization",
-      "Data Visualization"
+      "Data Visualization",
     ],
     image: "assets/img/preview1.jpg",
     outputs: {
       report:
         "https://docs.google.com/document/d/1NxOFDOxjQnm920lpCXSC99LPypADW0UZlhiOtPjJyLw/edit?usp=sharing",
-      code:
-        "https://github.com/nathantorento/2022-SF-Cleanliness-Report-Replication/blob/main/main.ipynb"
-    }
+      code: "https://github.com/nathantorento/2022-SF-Cleanliness-Report-Replication/blob/main/main.ipynb",
+    },
   },
 
   {
@@ -85,20 +108,18 @@ const projects = [
       "Data Analysis",
       "Data Visualization",
       "Machine Learning",
-      "Model Optimization"
+      "Model Optimization",
     ],
     image:
       "https://raw.githubusercontent.com/nathantorento/MBTI/main/preview.jpg",
     outputs: {
       report:
         "https://docs.google.com/document/d/1uTJQU1-7PlZevXltbRa00iQcai99oz_ry-m2SSdQthQ/edit?usp=sharing",
-      code:
-        "https://colab.research.google.com/github/nathantorento/MBTI/blob/main/main.ipynb",
+      code: "https://colab.research.google.com/github/nathantorento/MBTI/blob/main/main.ipynb",
       repository: "https://github.com/nathantorento/MBTI",
-      presentation:
-        "https://www.beautiful.ai/player/-NqtspAerBsqRW99dDGS",
-      webapp: "WIP"
-    }
+      presentation: "https://www.beautiful.ai/player/-NqtspAerBsqRW99dDGS",
+      webapp: "WIP",
+    },
   },
 
   {
@@ -112,14 +133,13 @@ const projects = [
       "Data Wrangling",
       "Data Interpretation",
       "Report Writing",
-      "Presentation Development"
+      "Presentation Development",
     ],
     image: "assets/img/hiveqldemo.jpg",
     outputs: {
       notebook: "HiveQLDemoNotebook.html",
-      presentation:
-        "https://www.beautiful.ai/player/-Ntyi7PGPN8HGbRmFlmK"
-    }
+      presentation: "https://www.beautiful.ai/player/-Ntyi7PGPN8HGbRmFlmK",
+    },
   },
 
   {
@@ -139,19 +159,17 @@ const projects = [
       "Dimensionality Reduction",
       "Model Evaluation",
       "Model Interpretation",
-      "Data Visualization"
+      "Data Visualization",
     ],
     image: "assets/img/homelessness_vs_housing.jpg",
     outputs: {
       report:
         "https://docs.google.com/document/d/1GGRfLFDWNZIKVtrGBoObZ23CEuO8PpgcESGDbZosPMM/edit?usp=sharing",
-      code:
-        "https://colab.research.google.com/github/nathantorento/homelessness-vs-housing-prices-sf-bay-ca/blob/main/main.ipynb",
+      code: "https://colab.research.google.com/github/nathantorento/homelessness-vs-housing-prices-sf-bay-ca/blob/main/main.ipynb",
       repository:
         "https://github.com/nathantorento/homelessness-vs-housing-prices-sf-bay-ca",
-      presentation:
-        "https://www.beautiful.ai/player/-NqtqC5wWyygGQR8dgQI"
-    }
+      presentation: "https://www.beautiful.ai/player/-NqtqC5wWyygGQR8dgQI",
+    },
   },
 
   {
@@ -165,7 +183,7 @@ const projects = [
       "SQLite",
       "Databricks",
       "Delta Lake",
-      "Mode"
+      "Mode",
     ],
     skills: [
       "SQL Querying",
@@ -175,13 +193,13 @@ const projects = [
       "A/B Testing",
       "Distributed Computing",
       "Pipeline Engineering",
-      "Data Storytelling"
+      "Data Storytelling",
     ],
     image: "assets/img/sql_certificate.jpg",
     outputs: {
       certificate:
-        "https://www.coursera.org/account/accomplishments/specialization/8HVG3DJYVUBP"
-    }
+        "https://www.coursera.org/account/accomplishments/specialization/8HVG3DJYVUBP",
+    },
   },
 
   {
@@ -196,12 +214,12 @@ const projects = [
       "Fault Tolerance Testing",
       "Data Replication",
       "System Monitoring",
-      "Technical Documentation"
+      "Technical Documentation",
     ],
     image: "assets/img/hadoop.jpg",
     outputs: {
       article:
-        "https://nathan-torento.medium.com/distributed-systems-fault-tolerance-tutorial-78b825f8cada"
-    }
-  }
+        "https://nathan-torento.medium.com/distributed-systems-fault-tolerance-tutorial-78b825f8cada",
+    },
+  },
 ];
